@@ -53,7 +53,7 @@ Shuttle.Fetching.secureCollection = function(Collection, field) {
 
 	var schema = {};
 	schema[field] = { type: [Refs.Schema], optional: true };
-	Shuttle.Posts.attachSchema(schema);
+	Collection.attachSchema(schema);
 
 	Collection.deny({
 		insert: function (userId, document) {

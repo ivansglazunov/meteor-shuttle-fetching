@@ -36,3 +36,8 @@ if (Meteor.isServer) {
 ## `Shuttle.Fetching.secureCollection(collection: Mongo.Collection, field: String)`
 Hides the documents in which the specified field does not contain references to the user or those with whom it is merged.
 To ignore the restriction on the server, and use `collection.direct.find` `collection.direct.findOne`.
+
+## Versions
+
+### 0.0.1
+* Fix `secureCollection`.
