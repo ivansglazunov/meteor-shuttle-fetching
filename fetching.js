@@ -66,7 +66,7 @@ Shuttle.Fetching.secureCollection = function(Collection, field) {
 		}
 	});
 	
-	this.mirrorTargetsFromTree(Tree, field);
+	Collection.mirrorTreeTargetsToSourceField(Tree, field);
 
 	Collection.before.find(function (userId, selector, options) {
 		if (!userId) userId = 'guest';

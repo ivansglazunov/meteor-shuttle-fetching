@@ -39,5 +39,8 @@ To ignore the restriction on the server, and use `collection.direct.find` `colle
 
 ## Versions
 
+### 0.0.2
+* Fix `mirrorTreeTargetsToSourceField`.
+
 ### 0.0.1
 * Fix `secureCollection`.
