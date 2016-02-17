@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'ivansglazunov:shuttle-fetching',
-	version: '0.0.3',
+	version: '0.0.4',
 	summary: 'The tree right to fetch documents with isolation requests.',
 	git: 'https://github.com/ivansglazunov/meteor-shuttle-fetching.git',
 	documentation: 'README.md'
@@ -13,6 +13,7 @@ Package.onUse(function(api) {
 	api.use('mongo');
 	api.use('accounts-base');
 	
+	api.use('stevezhu:lodash@4.3.0');
 	api.use('matb33:collection-hooks@0.8.1');
 	api.use('aldeed:collection2@2.8.0');
 	api.use('ivansglazunov:refs@0.1.0');
