@@ -28,7 +28,7 @@ When creating a user is recommended to use the following code:
 if (Meteor.isServer) {
 	Meteor.users.after.insert(function(userId, _user) {
 		var user = Meteor.users._transform(_user);
-		Shuttle.Fetching.link(user, user);
+		Shuttle.Fetching.addLink(user, user);
 	});
 }
 ```
