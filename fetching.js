@@ -1,11 +1,11 @@
 Shuttle.Fetching = new Mongo.Collection('shuttle:fetching');
 
 Shuttle.Fetching.attachTree();
+Shuttle.Fetching.attachDelete();
 
 if (Meteor.isServer) {
 	History.watchInsert(Shuttle.Fetching);
 	History.watchRemove(Shuttle.Fetching);
-	Shuttle.Fetching.attachDelete();
 	Shuttle.Used.inheritTree(Shuttle.Fetching);
 	Shuttle.Unused.inheritTree(Shuttle.Fetching);
 }
@@ -35,7 +35,7 @@ Shuttle.Fetching.deny({
 		}
 		throw new Meteor.Error('You are not permitted to insert fetching '+JSON.stringify(fetching));
 	},
-	remove: function(userId, _fetching) {
+	update: function(userId, _fetching) {
 		var fetching = Shuttle.Fetching._transform(_fetching);
 		if (userId) {
 			var user = Meteor.users.findOne(userId);
@@ -44,7 +44,10 @@ Shuttle.Fetching.deny({
 				return false; // a owner can do anything.
 			}
 		}
-		throw new Meteor.Error('You are not permitted to remove fetching '+JSON.stringify(fetching.Ref()));
+		throw new Meteor.Error('You are not permitted to update fetching '+JSON.stringify(fetching.Ref()));
+	},
+	remove: function(userId, _fetching) {
+		return true;
 	}
 });
 

@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'ivansglazunov:shuttle-fetching',
-	version: '0.0.6',
+	version: '0.0.7',
 	summary: 'The tree right to fetch documents with isolation requests.',
 	git: 'https://github.com/ivansglazunov/meteor-shuttle-fetching.git',
 	documentation: 'README.md'
@@ -17,9 +17,9 @@ Package.onUse(function(api) {
 	api.use('matb33:collection-hooks@0.8.1');
 	api.use('aldeed:collection2@2.8.0');
 	api.use('ivansglazunov:refs@0.1.0');
-	api.use('ivansglazunov:trees@1.1.6');
+	api.use('ivansglazunov:trees@1.1.9');
 	api.use('ivansglazunov:history@0.0.2');
-	api.use('ivansglazunov:delete@0.1.0');
+	api.use('ivansglazunov:delete@0.2.0');
 	api.use('ivansglazunov:shuttle-rights@0.0.4');
 	
 	api.addFiles([
