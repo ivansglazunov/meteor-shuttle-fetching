@@ -39,6 +39,9 @@ To ignore the restriction on the server, and use `collection.direct.find` `colle
 
 ## Versions
 
+### 0.0.7
+* Support `ivansglazunov:restrict`
+
 ### 0.0.6
 * Support `ivansglazunov:delete`
 

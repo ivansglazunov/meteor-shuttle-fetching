@@ -10,6 +10,17 @@ if (Meteor.isServer) {
 	Shuttle.Unused.inheritTree(Shuttle.Fetching);
 }
 
+var restrict = function(userId, _fetching) {
+	var fetching = Shuttle.Fetching._transform(_fetching);
+	if (userId) {
+		var user = Meteor.users.findOne(userId);
+
+		if (Shuttle.can(Shuttle.Owning, fetching.source(), user)) { // User can own source.
+			return false; // a owner can do anything.
+		}
+	}
+	return true;
+};
 Shuttle.Fetching.deny({
 	insert: function(userId, _fetching) {
 		var fetching = Shuttle.Fetching._transform(_fetching);
@@ -33,19 +44,10 @@ Shuttle.Fetching.deny({
 				return false; // The owner can do anything.
 			}
 		}
-		throw new Meteor.Error('You are not permitted to insert fetching '+JSON.stringify(fetching));
+		return true;
 	},
-	update: function(userId, _fetching) {
-		var fetching = Shuttle.Fetching._transform(_fetching);
-		if (userId) {
-			var user = Meteor.users.findOne(userId);
-	
-			if (Shuttle.can(Shuttle.Owning, fetching.source(), user)) { // User can own source.
-				return false; // a owner can do anything.
-			}
-		}
-		throw new Meteor.Error('You are not permitted to update fetching '+JSON.stringify(fetching.Ref()));
-	},
+	delete: restrict,
+	undelete: restrict,
 	remove: function(userId, _fetching) {
 		return true;
 	}
