@@ -39,6 +39,11 @@ To ignore the restriction on the server, and use `collection.direct.find` `colle
 
 ## Versions
 
+### 0.0.5
+* Remove `ivansglazunov:inserted`
+* Add `ivansglazunov:history`
+* findOne secure support
+
 ### 0.0.4
 * Fix `stevezhu:lodash@4.3.0`
 
