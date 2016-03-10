@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'ivansglazunov:shuttle-fetching',
-	version: '0.0.8',
-	summary: 'The tree right to fetch documents with isolation requests.',
+	version: '0.0.9',
+	summary: 'DEPRECATED',
 	git: 'https://github.com/ivansglazunov/meteor-shuttle-fetching.git',
 	documentation: 'README.md'
 });

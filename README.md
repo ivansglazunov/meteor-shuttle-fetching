@@ -1,4 +1,4 @@
-# ShuttleFetching
+# ~~ShuttleFetching~~ DEPRECATED
 
 ```
 meteor add ivansglazunov:shuttle-fetching
